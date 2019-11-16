@@ -1,5 +1,7 @@
 import React from "react";
 
-const App = () => <div>HI from React</div>;
+import "./styles.css";
+
+const App = () => <h1 className="sample-class">HI from React</h1>;
 
 export default App;

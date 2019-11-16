@@ -20,13 +20,22 @@ module.exports = {
     rules: [
       {
         test: /\.jsx$/,
-        include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, "src"),
         use: {
           loader: "babel-loader",
           options: {
             babelrc: true
           }
         }
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader"
+        ]
       }
     ]
   },
