@@ -1,3 +1,9 @@
-.sample-class {
-    color: red;
+.box-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    transition: all 0.2s ease-in-out;
+}
+
+.box {
+    grid-column-end: span 1;
 }

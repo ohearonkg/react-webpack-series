@@ -34,7 +34,26 @@ module.exports = {
           // Creates `style` nodes from JS strings
           "style-loader",
           // Translates CSS into CommonJS
-          "css-loader"
+          "css-loader",
+          {
+            // Vendor Prefixing CSS for Cross
+            // Browser Support
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              plugins: () => [
+                require('postcss-flexbugs-fixes')(),
+                // Without any Options Defaults to
+                // Stage 2
+                require("postcss-preset-env")({
+                  autoprefixer: {
+                    grid: true
+                  }
+                }),
+                require("postcss-normalize")
+              ]
+            }
+          }
         ]
       }
     ]
