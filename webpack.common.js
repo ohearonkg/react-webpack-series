@@ -36,19 +36,17 @@ module.exports = {
           // Translates CSS into CommonJS
           "css-loader",
           {
-            // Vendor Prefixing CSS for Cross
-            // Browser Support
+            // Vendor Prefixing & Polyfills
             loader: "postcss-loader",
             options: {
               ident: "postcss",
               plugins: () => [
-                require('postcss-flexbugs-fixes')(),
-                // Without any Options Defaults to
-                // Stage 2
+                require('postcss-flexbugs-fixes'),
                 require("postcss-preset-env")({
                   autoprefixer: {
-                    grid: true
-                  }
+                    flexbox: 'no-2009'
+                  },
+                  stage: 3
                 }),
                 require("postcss-normalize")
               ]
